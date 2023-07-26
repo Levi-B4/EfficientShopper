@@ -119,7 +119,7 @@ namespace ShoppingListAPI.Controllers
         // DELETE: api/Products
         // Used to clear shopping list
         [HttpDelete]
-        public async Task<IActionResult> DeleteProducts(Guid id)
+        public async Task<IActionResult> DeleteProducts()
         {
             if (_context.Products == null)
             {
