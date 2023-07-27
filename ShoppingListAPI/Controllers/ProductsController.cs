@@ -115,6 +115,24 @@ namespace ShoppingListAPI.Controllers
 
             return NoContent();
         }
+
+        // DELETE: api/Products
+        // Used to clear shopping list
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProducts()
+        {
+            if (_context.Products == null)
+            {
+                return NotFound();
+            }
+            //remove all products in _context
+            await _context.Database.ExecuteSqlRawAsync("DELETE FROM Products");
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         private bool ProductExists(Guid id)
         {
             return (_context.Products?.Any(e => e.ID == id)).GetValueOrDefault();
