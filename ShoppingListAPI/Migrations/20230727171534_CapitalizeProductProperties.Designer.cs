@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShoppingListAPI;
 
@@ -10,9 +11,11 @@ using ShoppingListAPI;
 namespace ShoppingListAPI.Migrations
 {
     [DbContext(typeof(ProductDBContext))]
-    partial class ProductDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230727171534_CapitalizeProductProperties")]
+    partial class CapitalizeProductProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.9");
@@ -26,10 +29,6 @@ namespace ShoppingListAPI.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT")
                         .HasComment("Short description to clarify product if wanted");
-
-                    b.Property<bool>("IsBought")
-                        .HasColumnType("INTEGER")
-                        .HasComment("Used to show user if product has been purchased or not");
 
                     b.Property<string>("Name")
                         .IsRequired()
