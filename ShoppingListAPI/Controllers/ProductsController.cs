@@ -126,8 +126,7 @@ namespace ShoppingListAPI.Controllers
                 return NotFound();
             }
             //remove all products in _context
-            await _context.Database.ExecuteSqlRawAsync("TRUNCATE TABLE [Products]");
-
+            await _context.Database.ExecuteSqlRawAsync("DELETE FROM Products");
 
             await _context.SaveChangesAsync();
 
