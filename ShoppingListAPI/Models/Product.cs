@@ -18,9 +18,3 @@ namespace ShoppingListAPI.Models
         public string? quantityUnit { get; set; }
     }
 }
-
-
-//create new product that returns the errro and test for taht 
-//assert for exception (pass or fail based off that
-
-//add in readme to do ef-database update (can find more info for it online at getting started with ef)
