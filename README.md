@@ -1,7 +1,7 @@
 # ShoppingListAPI
 
 ## Description
-ShoppingListAPI is a .NET Web API which incorporates CRUD and can be used to store products in a list. Products may be Created, Read individually or all together, Updated, or Deleted individually or all together. This API can be incorperated by any program wanting to create a shopping list.
+Efficient Shopper is a .NET Web API which incorporates CRUD and can be used to store products in a list. Inputs are verified using regular expressions with data handling occurring asynchronously to enhance scalability.
 
 ## Features
 1. Regular Expression to verify the formatting of the price of a product
